@@ -29,14 +29,20 @@ createApp({
                         title: "Marvel's Avengers",
                         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                         i: 4,
+                    }, {
+                        image: './img/06.jpg',
+                        title: "Deadpool & Wolverine",
+                        text: 'La Time Variance Authority strappa l\'irresponsabile eroe Deadpool dalla sua vita tranquilla, e lo mette in una missione con Wolverine che cambierà la storia del Marvel Cinematic Universe',
+                        i: 5,
                     }
                 ],
             slide : {
-                        image: './img/01.webp',
-                        title: 'Marvel\'s Spiderman Miles Morale',
-                        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+                        image: './img/06.jpg',
+                        title: "Deadpool & Wolverine",
+                        text: 'La Time Variance Authority strappa l\'irresponsabile eroe Deadpool dalla sua vita tranquilla, e lo mette in una missione con Wolverine che cambierà la storia del Marvel Cinematic Universe',
+                        i: 5,
                     },
-            index: 0,
+            index: 5,
         }
     },
     methods:{
@@ -94,16 +100,12 @@ createApp({
                 
             });
         },
-        gigi: function(){
-            let miniImmagini = document.querySelector('img.biancoNero')
-            console.log(miniImmagini);
-        }
         
     },
     mounted(){
         const boxTumblrEl = document.querySelector('div.boxImgTumblr');
         this.printTumblr(boxTumblrEl);
-        const primaImmagine = document.querySelector('img.imgTumblr:first-child');
+        const primaImmagine = document.querySelector('img.imgTumblr:last-child');
                 console.log(primaImmagine)
                 primaImmagine.classList.remove('biancoNero');
     }
