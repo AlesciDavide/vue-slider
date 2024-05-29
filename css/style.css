@@ -5,10 +5,17 @@
 }
 
 .container {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.boxContainer{
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .item {
@@ -22,6 +29,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.boxImgTumblr{
+    border: 1px solid black;
+}
+
+.imgTumblr{
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin: .3rem;
 }
 
 .item .text {

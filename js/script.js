@@ -44,21 +44,36 @@ createApp({
                 this.index = 0
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
-                this.index++
             }
         },
         eventLeftActive: function(){
             if(this.index > 0){
+                this.index--
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
-                this.index--
             }else{
                 this.index = Number.parseInt(this.slides.length -1);
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
-                this.index--
+
             }
-        }
+        },
+        printTumblr: function(element){
+            this.slides.forEach(immagini => {
+                let imgTumblrEl = document.createElement('img');
+                imgTumblrEl.src = immagini.image;
+                imgTumblrEl.classList.add('imgTumblr');
+                element.appendChild(imgTumblrEl);
+                imgTumblrEl.addEventListener('click', function(){
+                    
+                })
+            });
+
+        },
+    },
+    mounted(){
+        const boxTumblrEl = document.querySelector('div.boxImgTumblr');
+        this.printTumblr(boxTumblrEl);
     }
 }).mount('#app')
 
