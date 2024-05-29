@@ -29,30 +29,38 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: width 2s ease-in-out;
+    border: 2px double red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 2s ease-in-out;
 }
 
 .boxImgTumblr{
     /* border: 1px solid black; */
 }
 
-
 .item .text {
     position: absolute;
-    right: 20px;
+    right: 30px;
     bottom: 20px;
     text-align: right;
     color: white;
+    font-weight: bold;
 }
 
 .btnActive{
     padding: .5rem;
 }
 
+/* .btnActiveClick{
+    font-size: 1.5rem;
+} */
+
 .imgTumblr{
     width: 60px;
     aspect-ratio: 1/1;
     margin: .1rem;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: tumblrMove 5s linear infinite;
 }
 
@@ -62,6 +70,10 @@
     width: 50px;
     border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
     animation: tumblrMove 0s linear infinite;
+}
+
+.animated {
+    animation: immageMovie 2s linear;
 }
 
 @keyframes tumblrMove {
@@ -96,4 +108,51 @@
     100%{
         border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
     }
+}
+
+@keyframes immageMovie{
+    0%,
+    100%{
+        border-radius: 0%;
+    }
+
+    25%{
+        border-radius: 10%;
+    }
+
+    50%{
+        border-radius: 20%;
+    }
+
+    75%{
+        border-radius: 10%;
+    }
+    /* 0%,
+    100%{
+        border-radius: 0
+    }
+
+    14%{
+        border-radius: 8% 8% 22% 14% / 17% 8% 8% 19%;
+    }
+
+    28%{
+        border-radius: 34% 26% 18% 42% / 29% 50% 10% 31%;
+    }
+
+    42%{
+        border-radius: 21% 19% 35% 25% / 41% 18% 42% 19%;
+    }
+
+    56%{
+        border-radius: 41% 19% 47% 13% / 50% 30% 30% 10%;
+    }
+
+    70%{
+        border-radius: 30% 30% 14% 46% / 36% 48% 12% 24%;
+    }
+
+    84%{
+        border-radius: 8% 8% 22% 14% / 17% 8% 8% 19%;
+    } */
 }

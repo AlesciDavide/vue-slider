@@ -46,11 +46,11 @@ createApp({
         }
     },
     methods:{
+        /* funzione per  attivare il tasto destro*/
         eventRightActive: function(){
             this.index++
             if(this.index < this.slides.length){
                 this.slide = this.slides[this.index];
-                console.log(this.slide);
                 const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
                 tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
                 tutteLeImmagini[this.index].classList.remove('biancoNero');
@@ -61,15 +61,15 @@ createApp({
                 tutteLeImmagini[this.index -1 ].classList.add('biancoNero');
                 this.index = 0
                 this.slide = this.slides[this.index];
-                console.log(this.slide);
                 tutteLeImmagini[this.index].classList.remove('biancoNero');
             }
+            this.AnimationEffectFunction();
         },
+        /* funzione per  attivare il tasto sinistro*/
         eventLeftActive: function(){
             if(this.index > 0){
                 this.index--
                 this.slide = this.slides[this.index];
-                console.log(this.slide);
                 const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
                 tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
                 tutteLeImmagini[this.index].classList.remove('biancoNero');
@@ -80,10 +80,11 @@ createApp({
                 tutteLeImmagini[this.index ].classList.add('biancoNero');
                 this.index = Number.parseInt(this.slides.length -1);
                 this.slide = this.slides[this.index];
-                console.log(this.slide);
                 tutteLeImmagini[this.index].classList.remove('biancoNero');
             }
+            this.AnimationEffectFunction();
         },
+        /* funzione per la crazione e la gestione delle immagini sotto l'immagine principale */
         printTumblr: function(element){
             this.slides.forEach(immagini => {
                 let imgTumblrEl = document.createElement('img');
@@ -100,14 +101,21 @@ createApp({
                 
             });
         },
+        /* animazione per l'immagine principale ad ogni cambio di immagine */
+        AnimationEffectFunction: function(){
+            const immagineFront = document.querySelector('div.item > img');
+            immagineFront.classList.add('animated');
+            setTimeout(function(){
+                immagineFront.classList.remove('animated');
+            }, 2000)
+        }
         
     },
     mounted(){
+        /* richiamo la funzione per la gestione delle immagini sotto l'immagine principale */
         const boxTumblrEl = document.querySelector('div.boxImgTumblr');
         this.printTumblr(boxTumblrEl);
         const primaImmagine = document.querySelector('img.imgTumblr:last-child');
-                console.log(primaImmagine)
-                primaImmagine.classList.remove('biancoNero');
+        primaImmagine.classList.remove('biancoNero');
     }
 }).mount('#app')
-
