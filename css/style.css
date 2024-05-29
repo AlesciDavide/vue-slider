@@ -35,11 +35,7 @@
     border: 1px solid black;
 }
 
-.imgTumblr{
-    width: 60px;
-    aspect-ratio: 1/1;
-    margin: .1rem;
-}
+
 
 .item .text {
     position: absolute;
@@ -51,6 +47,12 @@
 
 .btnActive{
     padding: .5rem;
+}
+
+.imgTumblr{
+    width: 60px;
+    aspect-ratio: 1/1;
+    margin: .1rem;
 }
 
 .biancoNero{

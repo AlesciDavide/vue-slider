@@ -59,19 +59,18 @@ createApp({
             }
         },
         printTumblr: function(element){
-            this.slides.forEach((immagini, key) => {
+            this.slides.forEach(immagini => {
                 let imgTumblrEl = document.createElement('img');
                 imgTumblrEl.src = immagini.image;
                 imgTumblrEl.classList.add('imgTumblr', 'biancoNero');
                 element.appendChild(imgTumblrEl);
                 imgTumblrEl.addEventListener('click',() =>{
-                    console.log(immagini, key)
                     this.slide = immagini;
                     const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                    console.log(tutteLeImmagini);
                     tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
                     imgTumblrEl.classList.remove('biancoNero');
                 })
+                
             });
 
         },
@@ -79,6 +78,9 @@ createApp({
     mounted(){
         const boxTumblrEl = document.querySelector('div.boxImgTumblr');
         this.printTumblr(boxTumblrEl);
+        const primaImmagine = document.querySelector('img.imgTumblr:first-child');
+                console.log(primaImmagine)
+                primaImmagine.classList.remove('biancoNero');
     }
 }).mount('#app')
 
