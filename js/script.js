@@ -105,10 +105,13 @@ createApp({
         /* animazione per l'immagine principale ad ogni cambio di immagine */
         AnimationEffectFunction: function(){
             const immagineFront = document.querySelector('div.item > img');
+            const textFront = document.querySelector('div.text');
             immagineFront.classList.add('animated');
+            textFront.classList.add('animated');
             setTimeout(function(){
                 immagineFront.classList.remove('animated');
-            }, 1300)
+                textFront.classList.remove('animated');
+            }, 500)
         }
         
     },
