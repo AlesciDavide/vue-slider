@@ -40,10 +40,16 @@ createApp({
             if(this.index < this.slides.length){
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
+                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
+                tutteLeImmagini[this.index].classList.remove('biancoNero');
+                tutteLeImmagini[this.index - 1 ].classList.add('biancoNero');
             }else{
+                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
+                tutteLeImmagini[this.index -1 ].classList.add('biancoNero');
                 this.index = 0
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
+                tutteLeImmagini[this.index].classList.remove('biancoNero');
             }
         },
         eventLeftActive: function(){
@@ -51,10 +57,16 @@ createApp({
                 this.index--
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
+                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
+                tutteLeImmagini[this.index].classList.remove('biancoNero');
+                tutteLeImmagini[this.index + 1 ].classList.add('biancoNero');
             }else{
+                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
+                tutteLeImmagini[this.index ].classList.add('biancoNero');
                 this.index = Number.parseInt(this.slides.length -1);
                 this.slide = this.slides[this.index];
                 console.log(this.slide);
+                tutteLeImmagini[this.index].classList.remove('biancoNero');
 
             }
         },
@@ -72,8 +84,12 @@ createApp({
                 })
                 
             });
-
         },
+        gigi: function(){
+            let miniImmagini = document.querySelector('img.biancoNero')
+            console.log(miniImmagini);
+        }
+        
     },
     mounted(){
         const boxTumblrEl = document.querySelector('div.boxImgTumblr');
