@@ -108,7 +108,7 @@ createApp({
             immagineFront.classList.add('animated');
             setTimeout(function(){
                 immagineFront.classList.remove('animated');
-            }, 2000)
+            }, 1300)
         }
         
     },

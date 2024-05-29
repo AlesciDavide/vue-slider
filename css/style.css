@@ -40,10 +40,14 @@
 
 .item .text {
     position: absolute;
-    right: 30px;
-    bottom: 20px;
+    padding: 5px;
+    right: 2px;
+    left: 2px;
+    bottom: 2px;
     text-align: right;
     color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    background-size: 100%;
     font-weight: bold;
 }
 
@@ -75,7 +79,7 @@
 }
 
 .animated {
-    animation: immageMovie 2s linear;
+    animation: immageMovie 1.3s linear;
 }
 
 @keyframes tumblrMove {
@@ -119,15 +123,15 @@
     }
 
     25%{
-        border-radius: 10%;
+        border-radius: 15% 19% 0 0 ;
     }
 
     50%{
-        border-radius: 20%;
+        border-radius: 34% 30% 0 0 ;
     }
 
     75%{
-        border-radius: 10%;
+        border-radius: 15% 19% 0 0;
     }
     /* 0%,
     100%{
