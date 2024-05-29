@@ -59,13 +59,18 @@ createApp({
             }
         },
         printTumblr: function(element){
-            this.slides.forEach(immagini => {
+            this.slides.forEach((immagini, key) => {
                 let imgTumblrEl = document.createElement('img');
                 imgTumblrEl.src = immagini.image;
-                imgTumblrEl.classList.add('imgTumblr');
+                imgTumblrEl.classList.add('imgTumblr', 'biancoNero');
                 element.appendChild(imgTumblrEl);
-                imgTumblrEl.addEventListener('click', function(){
-                    
+                imgTumblrEl.addEventListener('click',() =>{
+                    console.log(immagini, key)
+                    this.slide = immagini;
+                    const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
+                    console.log(tutteLeImmagini);
+                    tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
+                    imgTumblrEl.classList.remove('biancoNero');
                 })
             });
 

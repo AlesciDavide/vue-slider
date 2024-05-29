@@ -36,9 +36,9 @@
 }
 
 .imgTumblr{
-    width: 50px;
+    width: 60px;
     aspect-ratio: 1/1;
-    margin: .3rem;
+    margin: .1rem;
 }
 
 .item .text {
@@ -51,4 +51,10 @@
 
 .btnActive{
     padding: .5rem;
+}
+
+.biancoNero{
+    filter: grayscale(1);
+    margin: .3rem;
+    width: 50px;
 }
