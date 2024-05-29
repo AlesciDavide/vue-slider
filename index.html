@@ -14,8 +14,8 @@
     <div id="app">
         <div class="boxContainer">
         <div class="container">
-            <div class="btnActive">
-                <i @click="eventLeftActive" class="fa-solid fa-angles-left"></i>
+            <div @click="eventLeftActive" class="btnActive">
+                <i class="arrowActiveLeft fa-solid fa-angles-left"></i>
             </div>
             <div class="slider-wrapper" tabindex="0">
                 <div class="item">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div @click="eventRightActive" class="btnActive">
-                <i class="fa-solid fa-angles-right"></i>
+                <i class="arrowActiveRight fa-solid fa-angles-right"></i>
             </div>
         </div>
         <div class="boxImgTumblr">

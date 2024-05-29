@@ -43,17 +43,19 @@
     right: 30px;
     bottom: 20px;
     text-align: right;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
 .btnActive{
     padding: .5rem;
+    margin: 0 .5rem;
 }
 
-/* .btnActiveClick{
+.arrowActiveRight,
+.arrowActiveLeft{
     font-size: 1.5rem;
-} */
+}
 
 .imgTumblr{
     width: 60px;

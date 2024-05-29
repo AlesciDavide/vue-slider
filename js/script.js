@@ -92,6 +92,7 @@ createApp({
                 imgTumblrEl.classList.add('imgTumblr', 'biancoNero');
                 element.appendChild(imgTumblrEl);
                 imgTumblrEl.addEventListener('click',() =>{
+                    this.AnimationEffectFunction();
                     this.slide = immagini;
                     const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
                     tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
