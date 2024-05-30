@@ -36,72 +36,33 @@ createApp({
                         i: 5,
                     }
                 ],
-            slide : {
-                        image: './img/06.jpg',
-                        title: "Deadpool & Wolverine",
-                        text: 'La Time Variance Authority strappa l\'irresponsabile eroe Deadpool dalla sua vita tranquilla, e lo mette in una missione con Wolverine che cambierà la storia del Marvel Cinematic Universe',
-                        i: 5,
-                    },
-            index: 5,
+            activeIndex: 5,
         }
     },
     methods:{
         /* funzione per  attivare il tasto destro*/
         eventRightActive: function(){
-            this.index++
-            if(this.index < this.slides.length){
-                this.slide = this.slides[this.index];
-                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
-                tutteLeImmagini[this.index].classList.remove('biancoNero');
-                tutteLeImmagini[this.index - 1 ].classList.add('biancoNero');
+            if(this.activeIndex < this.slides.length-1){
+                this.activeIndex++
             }else{
-                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
-                tutteLeImmagini[this.index -1 ].classList.add('biancoNero');
-                this.index = 0
-                this.slide = this.slides[this.index];
-                tutteLeImmagini[this.index].classList.remove('biancoNero');
+                this.activeIndex = 0
             }
             this.AnimationEffectFunction();
         },
         /* funzione per  attivare il tasto sinistro*/
         eventLeftActive: function(){
-            if(this.index > 0){
-                this.index--
-                this.slide = this.slides[this.index];
-                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
-                tutteLeImmagini[this.index].classList.remove('biancoNero');
-                tutteLeImmagini[this.index + 1 ].classList.add('biancoNero');
+            if(this.activeIndex > 0){
+                this.activeIndex--
             }else{
-                const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
-                tutteLeImmagini[this.index ].classList.add('biancoNero');
-                this.index = Number.parseInt(this.slides.length -1);
-                this.slide = this.slides[this.index];
-                tutteLeImmagini[this.index].classList.remove('biancoNero');
+                this.activeIndex = this.slides.length-1;
             }
             this.AnimationEffectFunction();
         },
-        /* funzione per la crazione e la gestione delle immagini sotto l'immagine principale */
-        printTumblr: function(element){
-            this.slides.forEach(immagini => {
-                let imgTumblrEl = document.createElement('img');
-                imgTumblrEl.src = immagini.image;
-                imgTumblrEl.classList.add('imgTumblr', 'biancoNero');
-                element.appendChild(imgTumblrEl);
-                imgTumblrEl.addEventListener('click',() =>{
-                    this.AnimationEffectFunction();
-                    this.slide = immagini;
-                    const tutteLeImmagini = document.querySelectorAll('img.imgTumblr');
-                    tutteLeImmagini.forEach(img => img.classList.add('biancoNero'));
-                    imgTumblrEl.classList.remove('biancoNero');
-                    this.index = this.slide.i;
-                })
-                
-            });
+        tumblrChangeindex: function(index){
+            this.activeIndex = index;
+            this.AnimationEffectFunction();
         },
+        
         /* animazione per l'immagine principale ad ogni cambio di immagine */
         AnimationEffectFunction: function(){
             const immagineFront = document.querySelector('div.item > img');
@@ -116,10 +77,5 @@ createApp({
         
     },
     mounted(){
-        /* richiamo la funzione per la gestione delle immagini sotto l'immagine principale */
-        const boxTumblrEl = document.querySelector('div.boxImgTumblr');
-        this.printTumblr(boxTumblrEl);
-        const primaImmagine = document.querySelector('img.imgTumblr:last-child');
-        primaImmagine.classList.remove('biancoNero');
     }
 }).mount('#app')

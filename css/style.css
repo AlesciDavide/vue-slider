@@ -18,6 +18,10 @@
     flex-direction: column;
 }
 
+.boxImgTumblr{
+    display: flex;
+}
+
 .item {
     float: left;
     width: 700px;
@@ -32,10 +36,6 @@
     border: 2px double red;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 2s ease-in-out;
-}
-
-.boxImgTumblr{
-    /* border: 1px solid black; */
 }
 
 .item .text {
