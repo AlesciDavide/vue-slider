@@ -19,8 +19,8 @@
             </div>
             <div class="slider-wrapper" tabindex="0">
                 <div class="item">
-                    <img :src="slides[activeIndex].image" :alt="slides[activeIndex].title"/>
-                    <div class="text">
+                    <img :src="slides[activeIndex].image" :alt="slides[activeIndex].title" :class="(isActive) ? 'animated' : ''"/>
+                    <div class="text" :class="(isActive) ? 'animated' : ''">
                         <h3>{{ slides[activeIndex].title }}</h3>
                         <p>
                             {{ slides[activeIndex].text }}

@@ -37,6 +37,7 @@ createApp({
                     }
                 ],
             activeIndex: 5,
+            isActive: false,
         }
     },
     methods:{
@@ -65,17 +66,12 @@ createApp({
         
         /* animazione per l'immagine principale ad ogni cambio di immagine */
         AnimationEffectFunction: function(){
-            const immagineFront = document.querySelector('div.item > img');
-            const textFront = document.querySelector('div.text');
-            immagineFront.classList.add('animated');
-            textFront.classList.add('animated');
-            setTimeout(function(){
-                immagineFront.classList.remove('animated');
-                textFront.classList.remove('animated');
+            this.isActive = true;
+
+            setTimeout(() =>{
+                this.isActive = false;
             }, 500)
         }
         
     },
-    mounted(){
-    }
 }).mount('#app')
